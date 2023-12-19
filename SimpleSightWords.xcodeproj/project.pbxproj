@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4DE183ED2B2F113D000220CF /* SimpleSightWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE183EC2B2F113D000220CF /* SimpleSightWordsApp.swift */; };
-		4DE183EF2B2F113D000220CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE183EE2B2F113D000220CF /* ContentView.swift */; };
 		4DE183F12B2F113E000220CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE183F02B2F113E000220CF /* Assets.xcassets */; };
 		4DE183F52B2F113E000220CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE183F42B2F113E000220CF /* Preview Assets.xcassets */; };
 		4DE183FF2B2F113E000220CF /* SimpleSightWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE183FE2B2F113E000220CF /* SimpleSightWordsTests.swift */; };
 		4DE184092B2F113E000220CF /* SimpleSightWordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE184082B2F113E000220CF /* SimpleSightWordsUITests.swift */; };
 		4DE1840B2B2F113E000220CF /* SimpleSightWordsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1840A2B2F113E000220CF /* SimpleSightWordsUITestsLaunchTests.swift */; };
+		4DE1841A2B2F11F5000220CF /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE184192B2F11F5000220CF /* GameStore.swift */; };
+		4DE1841C2B31B4A2000220CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1841B2B31B4A2000220CF /* HomeView.swift */; };
+		4DE1841E2B31B550000220CF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1841D2B31B550000220CF /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		4DE183E92B2F113D000220CF /* SimpleSightWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSightWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE183EC2B2F113D000220CF /* SimpleSightWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSightWordsApp.swift; sourceTree = "<group>"; };
-		4DE183EE2B2F113D000220CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4DE183F02B2F113E000220CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DE183F22B2F113E000220CF /* SimpleSightWords.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleSightWords.entitlements; sourceTree = "<group>"; };
 		4DE183F42B2F113E000220CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +46,9 @@
 		4DE184042B2F113E000220CF /* SimpleSightWordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleSightWordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE184082B2F113E000220CF /* SimpleSightWordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSightWordsUITests.swift; sourceTree = "<group>"; };
 		4DE1840A2B2F113E000220CF /* SimpleSightWordsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSightWordsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4DE184192B2F11F5000220CF /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
+		4DE1841B2B31B4A2000220CF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4DE1841D2B31B550000220CF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +99,12 @@
 		4DE183EB2B2F113D000220CF /* SimpleSightWords */ = {
 			isa = PBXGroup;
 			children = (
+				4DE184182B2F1192000220CF /* Settings */,
+				4DE184172B2F1176000220CF /* Game */,
 				4DE183EC2B2F113D000220CF /* SimpleSightWordsApp.swift */,
-				4DE183EE2B2F113D000220CF /* ContentView.swift */,
 				4DE183F02B2F113E000220CF /* Assets.xcassets */,
 				4DE183F22B2F113E000220CF /* SimpleSightWords.entitlements */,
+				4DE1841B2B31B4A2000220CF /* HomeView.swift */,
 				4DE183F32B2F113E000220CF /* Preview Content */,
 			);
 			path = SimpleSightWords;
@@ -127,6 +133,22 @@
 				4DE1840A2B2F113E000220CF /* SimpleSightWordsUITestsLaunchTests.swift */,
 			);
 			path = SimpleSightWordsUITests;
+			sourceTree = "<group>";
+		};
+		4DE184172B2F1176000220CF /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				4DE184192B2F11F5000220CF /* GameStore.swift */,
+				4DE1841D2B31B550000220CF /* GameView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		4DE184182B2F1192000220CF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DE183EF2B2F113D000220CF /* ContentView.swift in Sources */,
+				4DE1841C2B31B4A2000220CF /* HomeView.swift in Sources */,
+				4DE1841A2B2F11F5000220CF /* GameStore.swift in Sources */,
 				4DE183ED2B2F113D000220CF /* SimpleSightWordsApp.swift in Sources */,
+				4DE1841E2B31B550000220CF /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
