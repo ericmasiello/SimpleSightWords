@@ -13,7 +13,6 @@ struct FlashCard: Identifiable {
   var isActive = true
 }
 
-
 class FlashDeck: ObservableObject {
   @Published private var cards: [FlashCard]
   
@@ -35,6 +34,9 @@ class FlashDeck: ObservableObject {
   
   func reinsert(card currentCard: FlashCard) {
     if cards.count < 1 {
+      return
+    }
+    else if cards.count < 2 {
       cards.insert(currentCard, at: cards.count - 1)
     } else {
       cards.insert(currentCard, at: cards.count - 2)
@@ -46,21 +48,20 @@ class FlashDeck: ObservableObject {
       self.cards.reversed()
     }
   }
+  
+  var count: Int {
+    get {
+      cards.count
+    }
+  }
 }
 
-
 class GameStore: ObservableObject {
-  @Published var deck: FlashDeck
+  @Published var deck = FlashDeck(from: [])
   
-  private var initialDeck: [String]
-
-  @Published var activeCard: FlashCard?
+  private var initialDeck: [String] = []
   
-  init(from deck: [String]) {
-    initialDeck = deck
-    self.deck = FlashDeck(from: deck)
-    self.setNextActiveCard()
-  }
+  @Published var activeCard: FlashCard? = nil
   
   func setNextActiveCard() -> Void {
     activeCard = deck.peek()
@@ -70,23 +71,34 @@ class GameStore: ObservableObject {
     }
   }
   
-  
   func insertCardIntoDeck() -> Void {
+    
+    guard deck.count > 0 else {
+      return
+    }
+    
     guard let card = activeCard else {
       return
     }
     
+    // reset the active card
     activeCard = nil
     
     // move the activeCard back into the deck toward the top
     deck.reinsert(card: card)
     
-    // get the next card
+    // get the next card / sets the active card
     setNextActiveCard()
   }
   
   func restartGame() {
     self.deck = FlashDeck(from: initialDeck.shuffled())
+    self.setNextActiveCard()
+  }
+  
+  func updateDeck(from deck: [String]) {
+    initialDeck = deck
+    self.deck = FlashDeck(from: deck)
     self.setNextActiveCard()
   }
 }

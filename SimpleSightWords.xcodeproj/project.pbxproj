@@ -16,6 +16,7 @@
 		4DE1841A2B2F11F5000220CF /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE184192B2F11F5000220CF /* GameStore.swift */; };
 		4DE1841C2B31B4A2000220CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1841B2B31B4A2000220CF /* HomeView.swift */; };
 		4DE1841E2B31B550000220CF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1841D2B31B550000220CF /* GameView.swift */; };
+		4DE184202B31D0FD000220CF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1841F2B31D0FD000220CF /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4DE184192B2F11F5000220CF /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
 		4DE1841B2B31B4A2000220CF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4DE1841D2B31B550000220CF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		4DE1841F2B31D0FD000220CF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		4DE184182B2F1192000220CF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				4DE1841F2B31D0FD000220CF /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE184202B31D0FD000220CF /* SettingsView.swift in Sources */,
 				4DE1841C2B31B4A2000220CF /* HomeView.swift in Sources */,
 				4DE1841A2B2F11F5000220CF /* GameStore.swift in Sources */,
 				4DE183ED2B2F113D000220CF /* SimpleSightWordsApp.swift in Sources */,

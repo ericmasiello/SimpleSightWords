@@ -21,7 +21,7 @@ struct HomeView: View {
         }
         .tag(0)
       
-      Text("Settings")
+      SettingsView()
         .tabItem {
           VStack {
             Image(systemName: "gear")
@@ -34,6 +34,7 @@ struct HomeView: View {
 
 #Preview {
   let words = ["Now", "One", "When", "Two", "Three", "What"]
-  let gameStore = GameStore(from: words)
+  let gameStore = GameStore()
+  gameStore.updateDeck(from: words)
   return HomeView().environmentObject(gameStore)
 }

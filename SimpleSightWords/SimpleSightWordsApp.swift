@@ -7,18 +7,25 @@
 
 import SwiftUI
 
-// TODO: this needs to be fed from settings
-let words = ["Now", "One", "When", "Two", "Three", "Something Else"]
-
 @main
 struct SimpleSightWordsApp: App {
+  @AppStorage("questions")  var questions = ""
   
-    let gameStore = GameStore(from: words)
-  
-    var body: some Scene {
-        WindowGroup {
-            HomeView()
-            .environmentObject(gameStore)
-        }
+  var questionsAsList: [String] {
+    get {
+      questions.split(separator: "\n").map { String($0 )}
     }
+  }
+  
+  let gameStore = GameStore()
+  
+  var body: some Scene {
+    WindowGroup {
+      HomeView()
+        .environmentObject(gameStore)
+        .onAppear(perform: {
+          gameStore.updateDeck(from: questionsAsList)
+        })
+    }
+  }
 }

@@ -21,7 +21,6 @@ struct GameView: View {
       
       Button("I don't know it well yet") {
         gameStore.insertCardIntoDeck()
-  //      gameStore.deck.reinsert()
       }
       
       Button("I know it!") {
@@ -48,6 +47,7 @@ struct GameView: View {
 
 #Preview {
   let words = ["Now", "One", "When", "Two", "Three", "What"]
-  let gameStore = GameStore(from: words)
+  let gameStore = GameStore()
+  gameStore.updateDeck(from: words)
   return GameView().environmentObject(gameStore)
 }
