@@ -21,11 +21,13 @@ struct SimpleSightWordsApp: App {
   
   var body: some Scene {
     WindowGroup {
+//      DemoTabView()
       HomeView()
         .environmentObject(gameStore)
         .onAppear(perform: {
           gameStore.updateDeck(from: questionsAsList)
         })
+      
     }
   }
 }

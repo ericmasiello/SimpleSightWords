@@ -17,6 +17,9 @@
 		4DE1841C2B31B4A2000220CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1841B2B31B4A2000220CF /* HomeView.swift */; };
 		4DE1841E2B31B550000220CF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1841D2B31B550000220CF /* GameView.swift */; };
 		4DE184202B31D0FD000220CF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1841F2B31D0FD000220CF /* SettingsView.swift */; };
+		4DE184222B330763000220CF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE184212B330763000220CF /* CardView.swift */; };
+		4DE184242B3309B5000220CF /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE184232B3309B5000220CF /* CardStackView.swift */; };
+		4DE184282B34C085000220CF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE184272B34C085000220CF /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		4DE1841B2B31B4A2000220CF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4DE1841D2B31B550000220CF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		4DE1841F2B31D0FD000220CF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4DE184212B330763000220CF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		4DE184232B3309B5000220CF /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
+		4DE184272B34C085000220CF /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		4DE183EB2B2F113D000220CF /* SimpleSightWords */ = {
 			isa = PBXGroup;
 			children = (
+				4DE184292B34C0C0000220CF /* Common */,
 				4DE184182B2F1192000220CF /* Settings */,
 				4DE184172B2F1176000220CF /* Game */,
 				4DE183EC2B2F113D000220CF /* SimpleSightWordsApp.swift */,
@@ -142,6 +149,8 @@
 			children = (
 				4DE184192B2F11F5000220CF /* GameStore.swift */,
 				4DE1841D2B31B550000220CF /* GameView.swift */,
+				4DE184212B330763000220CF /* CardView.swift */,
+				4DE184232B3309B5000220CF /* CardStackView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -152,6 +161,14 @@
 				4DE1841F2B31D0FD000220CF /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		4DE184292B34C0C0000220CF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4DE184272B34C085000220CF /* GradientView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,10 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE184202B31D0FD000220CF /* SettingsView.swift in Sources */,
+				4DE184242B3309B5000220CF /* CardStackView.swift in Sources */,
 				4DE1841C2B31B4A2000220CF /* HomeView.swift in Sources */,
 				4DE1841A2B2F11F5000220CF /* GameStore.swift in Sources */,
 				4DE183ED2B2F113D000220CF /* SimpleSightWordsApp.swift in Sources */,
+				4DE184222B330763000220CF /* CardView.swift in Sources */,
 				4DE1841E2B31B550000220CF /* GameView.swift in Sources */,
+				4DE184282B34C085000220CF /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

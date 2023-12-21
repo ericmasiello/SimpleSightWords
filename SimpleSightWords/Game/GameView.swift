@@ -11,42 +11,50 @@ struct GameView: View {
   @EnvironmentObject var gameStore: GameStore
   
   var body: some View {
-    
-    VStack {
-      if let activeCard = gameStore.activeCard {
-        Text("Active card **\(activeCard.value)**")
-      } else {
-        Text("No active card")
-      }
-      
-      Button("I don't know it well yet") {
-        gameStore.insertCardIntoDeck()
-      }
-      
-      Button("I know it!") {
-        gameStore.setNextActiveCard()
-      }
-      
+    GradientView {
       VStack {
+        if let activeCard = gameStore.activeCard {
+          CardView(value: activeCard.value)
+        } else {
+          Text("No active card")
+        }
         
-        ForEach(gameStore.deck.asList) { card in
-          Text("\(card.value)")
+        Button("I don't know it well yet") {
+          gameStore.insertCardIntoDeck()
+        }
+        
+        Button("I know it!") {
+          gameStore.setNextActiveCard()
+        }
+        
+        VStack {
+          CardStackView(cards: gameStore.deck.asList)
+        }
+        .padding()
+        
+        Button("Restart Game") {
+          gameStore.restartGame()
         }
       }
-      .padding()
-      
-      Button("Restart Game") {
-        // TODO figure out a way to save the cards and rehydrate w/ the same deck
-        gameStore.restartGame()
-      }
     }
-    
-    
   }
 }
 
 #Preview {
-  let words = ["Now", "One", "When", "Two", "Three", "What"]
+  let words = [
+    "I",
+    "It",
+    "A",
+    "Not",
+    "One",
+    "Two",
+    "By",
+    "Be",
+    "Said",
+    "Will",
+    "On",
+    "To",
+  ]
   let gameStore = GameStore()
   gameStore.updateDeck(from: words)
   return GameView().environmentObject(gameStore)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-
+  
   @AppStorage("questions")  var questions = ""
   @EnvironmentObject var gameStore: GameStore
   
@@ -21,37 +21,28 @@ struct SettingsView: View {
   }
   
   var body: some View {
-    List {
-      
-      Text("Settings")
-        .font(.largeTitle)
-        .padding(.bottom, 8)
-      
-      Section(header: Text("Questions")) {
-        TextEditor(text: $questions)
-//          .padding(.horizontal)
-//            .navigationTitle("Questions")
-          .frame(minHeight: 100)
-      }
-      
-      Section(header: Text("Debug")) {
-//        Text("Items:")
-        ForEach(questionsAsList, id: \.self) { value in
-            Text(value)
+    GradientView {
+      List {
+        Text("Settings")
+          .font(.largeTitle)
+          .padding(.bottom, 8)
+        
+        Section(header: Text("Questions")) {
+          TextEditor(text: $questions)
+            .frame(minHeight: 100)
         }
-      }
-      
-      Button("Update Game") {
-        gameStore.updateDeck(from: questionsAsList)
-      }
-      
-      
-      //        List {
-      //          Text("Hello")
-      //          Text("World")
-      //        }
+        
+        Section(header: Text("Debug")) {
+          ForEach(questionsAsList, id: \.self) { value in
+            Text(value)
+          }
+        }
+        
+        Button("Update Game") {
+          gameStore.updateDeck(from: questionsAsList)
+        }
+      }.scrollContentBackground(.hidden)
     }
-    
   }
 }
 
